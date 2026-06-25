@@ -1,3 +1,14 @@
+import sys
+from stats import (
+    word_count, 
+    character_count, 
+    sort_character_counts
+)
+
+if len(sys.argv) < 2:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)  # Exit with an error code
+
 def get_book_text(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as file:
@@ -9,8 +20,6 @@ def get_book_text(filepath):
     except Exception as e:
         print(f"An error occurred while attempting to read the file: {e}")
         return ""
-    
-def word_count(text):
     
     
 
