@@ -20,12 +20,18 @@ def get_book_text(filepath):
     except Exception as e:
         print(f"An error occurred while attempting to read the file: {e}")
         return ""
-    
-    
 
 def main():
-    file_content = get_book_text("./books/frankenstein.txt")
-    print(file_content)
+    file_content = get_book_text(sys.argv[1])
+    number_of_words = word_count(file_content)
+    number_of_characters = character_count(file_content.lower())
+    print("============ BOOKBOT ============")
+    print(f"Analyzing book found at {sys.argv[1]}...")
+    print("----------- Word Count ----------")
+    print(f"Found {number_of_words} total words")
+    print("--------- Character Count -------")
+    sort_character_counts(number_of_characters)
+    print("============= END ===============")
 
 main()
 
